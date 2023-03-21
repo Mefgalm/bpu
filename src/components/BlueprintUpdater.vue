@@ -186,7 +186,10 @@
   background-color: var(--main-bg-color);
   flex-direction: column;
   border: 1px var(--text-main-color) solid;
-  padding: 1em;
+  padding-top: 0em;
+  padding-bottom: 1em;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
 }
 .page {
   display: flex;
