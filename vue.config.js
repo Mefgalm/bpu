@@ -1,5 +1,11 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: '/bpu/'
+  publicPath: '/bpu/',
+  pages: {
+    index: {
+      entry: "src/main.js",
+      title: "Blueprint Upgrade"
+    }
+  }
 })

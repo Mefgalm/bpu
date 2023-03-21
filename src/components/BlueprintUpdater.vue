@@ -35,7 +35,7 @@
         <div class="update-center-block">
           <div
             class="updates-link"
-            @click="isVisible = true"
+            @click="isUpdatesModalVisible = true"
           >Updates</div>
           <button @click="update">Update</button>
         </div>
@@ -61,7 +61,7 @@
     </div>
   </div>
   <Modal
-    v-model:visible="isVisible"
+    v-model:visible="isUpdatesModalVisible"
     type="clean"
     width="40%"
   >
@@ -112,7 +112,7 @@
         blueprintUpdatedJsonText: '',
         blueprintUpdatedCode: '',
         updates: [],
-        isVisible: false,
+        isUpdatesModalVisible: false,
         errorMessage: ''
       }
     },
@@ -155,7 +155,7 @@
       },
       addUpdate() {
         this.updates.push({from: '', to: ''});
-        this.isVisible = true;
+        this.isUpdatesModalVisible = true;
       },
       removeUpdate(index) {
         this.updates.splice(index, 1);
@@ -170,11 +170,11 @@
         this.updates = [];
       },
       update() {
-        let updateValues = new Map();
+        const updatesMap = new Map();
         for (const update of this.updates) {
-          updateValues.set(update.from, update.to);
+          updatesMap.set(update.from, update.to);
         }
-        this.blueprintUpdatedJson = bpUpdate.updateEntities(this.blueprintJson, updateValues);
+        this.blueprintUpdatedJson = bpUpdate.updateByName(this.blueprintJson, updatesMap);
       }
     }
   }
