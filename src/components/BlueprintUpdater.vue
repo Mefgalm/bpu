@@ -7,7 +7,7 @@
       <div class="github">
         <a
           class="link"
-          href="https://github.com"
+          href="https://github.com/Mefgalm/bpu"
           target="_blank"
         >
           <font-awesome-icon icon="fa-brands fa-github" />
