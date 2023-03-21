@@ -167,6 +167,7 @@
         this.blueprintCode = '';
         this.blueprintJson = null;
         this.blueprintUpdatedJson = null;
+        this.updates = [];
       },
       update() {
         let updateValues = new Map();
